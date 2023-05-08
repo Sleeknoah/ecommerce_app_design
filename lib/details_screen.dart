@@ -91,9 +91,12 @@ class _DetailsPageState extends State<DetailsPage> {
                   ),
                   const Description(),
                   const ShippingSellerInfo(),
+                  const SizedBox(
+                    height: 40,
+                  ),
                   const PageNumber(),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.06,
+                    height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   const AppGridView(),
                   SizedBox(
@@ -135,24 +138,89 @@ class PageNumber extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        AutoSizeText(
-          'Recommendations',
-          maxLines: 2,
-          style: GoogleFonts.nunito(
-            textStyle: TextStyle(
-              color: AppColors.buttonColor,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
+        Expanded(
+          flex: 2,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  color: Color(0x8ECFCFCF),
+                  shape: BoxShape.circle,
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: FaIcon(
+                    FontAwesomeIcons.angleLeft,
+                    size: 15,
+                  ),
+                ),
+              ),
+              AutoSizeText(
+                '1',
+                style: GoogleFonts.nunito(
+                  textStyle: TextStyle(
+                    color: AppColors.buttonColorSecondary,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              AutoSizeText(
+                '2',
+                style: GoogleFonts.nunito(
+                  textStyle: TextStyle(
+                    color: AppColors.textColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              AutoSizeText(
+                '3',
+                style: GoogleFonts.nunito(
+                  textStyle: TextStyle(
+                    color: AppColors.textColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              AutoSizeText(
+                '....',
+                style: GoogleFonts.nunito(
+                  textStyle: TextStyle(
+                    color: AppColors.textColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const Material(
+                elevation: 8.0,
+                shape: CircleBorder(),
+                color: Colors.white,
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: FaIcon(
+                    FontAwesomeIcons.angleRight,
+                    size: 15,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
-        AutoSizeText(
-          'See More',
-          style: GoogleFonts.nunito(
-            textStyle: TextStyle(
-              color: AppColors.buttonColorSecondary,
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
+        Expanded(
+          child: AutoSizeText(
+            'See More',
+            textAlign: TextAlign.end,
+            style: GoogleFonts.nunito(
+              textStyle: TextStyle(
+                color: AppColors.buttonColorSecondary,
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
@@ -173,89 +241,24 @@ class AppGridView extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(
-              flex: 2,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                      color: Color(0x8ECFCFCF),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: FaIcon(
-                        FontAwesomeIcons.angleLeft,
-                        size: 15,
-                      ),
-                    ),
-                  ),
-                  AutoSizeText(
-                    '1',
-                    style: GoogleFonts.nunito(
-                      textStyle: TextStyle(
-                        color: AppColors.buttonColorSecondary,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  AutoSizeText(
-                    '2',
-                    style: GoogleFonts.nunito(
-                      textStyle: TextStyle(
-                        color: AppColors.textColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  AutoSizeText(
-                    '3',
-                    style: GoogleFonts.nunito(
-                      textStyle: TextStyle(
-                        color: AppColors.textColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  AutoSizeText(
-                    '....',
-                    style: GoogleFonts.nunito(
-                      textStyle: TextStyle(
-                        color: AppColors.textColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const Material(
-                    elevation: 8.0,
-                    shape: CircleBorder(),
-                    color: Colors.white,
-                    child: Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: FaIcon(
-                        FontAwesomeIcons.angleRight,
-                        size: 15,
-                      ),
-                    ),
-                  ),
-                ],
+            AutoSizeText(
+              'Recommendations',
+              maxLines: 2,
+              style: GoogleFonts.nunito(
+                textStyle: TextStyle(
+                  color: AppColors.buttonColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-            Expanded(
-              child: AutoSizeText(
-                'See More',
-                textAlign: TextAlign.end,
-                style: GoogleFonts.nunito(
-                  textStyle: TextStyle(
-                    color: AppColors.buttonColorSecondary,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
+            AutoSizeText(
+              'See More',
+              style: GoogleFonts.nunito(
+                textStyle: TextStyle(
+                  color: AppColors.buttonColorSecondary,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
