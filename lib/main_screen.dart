@@ -29,7 +29,7 @@ class MainScreen extends ConsumerStatefulWidget {
 
 class _MainScreenTestState extends ConsumerState<MainScreen> {
   double? offset;
-  final appBarSize = 100;
+  final appBarSize = 180;
   final zeroOpacityOffset = 0;
   ScrollController controller = ScrollController();
   int _currentIndex = 0;
@@ -96,6 +96,7 @@ class _MainScreenTestState extends ConsumerState<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(opacity);
     return Scaffold(
       body: Stack(
         children: [
